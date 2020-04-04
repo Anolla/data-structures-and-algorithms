@@ -37,6 +37,8 @@ Write a function named sortByLength that takes in an array of strings and return
 const sortByLength = (arr) => {
     // Solution code here...
     // arr.sort();
+    arr.sort((a, b) => a.length - b.length);
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,6 +51,16 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
     // Solution code here...
+    arr.sort((a, b) => {
+        if (a.toLowerCase() < b.toLowerCase()) {
+            return -1;
+        } else if (a.toLowerCase() === b.toLowerCase()) {
+            return 0;
+        } else if (a.toLowerCase() > b.toLowerCase()) {
+            return 1;
+        }
+    });
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,6 +78,16 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
     // Solution code here...
+    arr.sort((a, b) => {
+        if (a.price < b.price) {
+            return -1;
+        } else if (a.price === b.price) {
+            return 0;
+        } else {
+            return 1;
+        }
+    });
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,6 +122,16 @@ const people = [
 
 const sortPeople = (arr) => {
     // Solution code here...
+    arr.sort((a, b) => {
+        if (a.lastName < b.lastName) {
+            return -1;
+        } else if (a.lastName === b.lastName) {
+            return 0;
+        } else {
+            return 1;
+        }
+    });
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,6 +146,24 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
     // Solution code here...
+    arr.sort((a, b) => {
+        if (a.lastName < b.lastName) {
+            return -1;
+        } else if (a.lastName === b.lastName && a.firstName === b.firstName && a.age < b.age) {
+            return -1;
+        } else if (a.lastName === b.lastName && a.firstName === b.firstName && a.age === b.age) {
+            return 0;
+        } else if (a.lastName === b.lastName && a.firstName !== b.firstName && a.age < b.age) {
+            return 1;
+        } else if (a.lastName === b.lastName && a.firstName < b.lastName) {
+            return -1;
+        } else if (a.lastName === b.lastName && a.firstName > b.lastName) {
+            return 1;
+        } else {
+            return 1;
+        }
+    });
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
