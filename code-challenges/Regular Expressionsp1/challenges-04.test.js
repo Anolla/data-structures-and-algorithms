@@ -28,6 +28,9 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
     // Solution code here...
+    var matches = /\b[A-Z].*?\b/g
+    let arr = []
+    return str.match(matches) || arr
 };
 
 /* ------------------------------------------------------------------------------------------------
