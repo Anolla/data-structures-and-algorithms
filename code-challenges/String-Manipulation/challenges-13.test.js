@@ -10,12 +10,8 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
     // Solution code here...
-    let regexLetter = /^./;
-    return arr.reduce((acc, value) => {
-        let string = value.match(regexLetter)[0];
-        acc.push(string);
-        return acc;
-    }, []);
+    let newArray = arr.map((element) => element.substring(0, 1));
+    return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
