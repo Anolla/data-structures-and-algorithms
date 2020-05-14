@@ -31,7 +31,7 @@ const filterStringsWithVowels = (arr) => {
     // Solution code here...
     let arr2 = arr.join(' ');
     console.log(arr.join(' '));
-    let regex = /\w+[eouai]\w+/g
+    let regex = /[eouai]|\w+[eouai]+\w+/g
     console.log(arr2.match(regex));
     return arr2.match(regex)
 };
@@ -95,6 +95,15 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
     // Solution code here...
+    let arr2 = arr.filter((val, ind) => {
+
+        // console.log(val.baseStat > minBaseStat);
+
+        return val.baseStat > minBaseStat
+
+    })
+    console.log(arr2);
+    return arr2
 };
 
 /* ------------------------------------------------------------------------------------------------
