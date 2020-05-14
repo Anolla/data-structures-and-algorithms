@@ -36,18 +36,19 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 
-const addValues = (arr, value) => arr.push(value);
-// Solution code here...
-
-
+const addValues = (arr, value) => {
+    // Solution code here...
+    arr.push(value);
+};
 
 const addNumbers = (num, arr, times, callback) => {
+    // Solution code here...
     for (let i = 0; i < times; i++) {
-        callback(arr, num);
+        callback(arr, num)
+
     }
     return arr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -132,13 +133,13 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
     // Solution code here...
-    let list = [];
-    availableItems.forEach((value, index, array) => {
-        if (array[index].available === true) {
-            list.push(array[index].name);
+    let arr = []
+    availableItems.forEach((value) => {
+        if (value.available === true) {
+            arr.push(value.name);
         }
-    });
-    return list;
+    })
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -158,17 +159,17 @@ Return the resulting output array.
 const fizzbuzz = (arr) => {
     // Solution code here...
     let outputArr = [];
-    arr.forEach(value => {
-        if (value % 3 === 0 && value % 5 === 0) {
-            outputArr.push('Fizz Buzz');
-        } else if (value % 5 === 0) {
-            outputArr.push('Buzz');
+    arr.forEach((value) => {
+        if (value % 5 === 0 && value % 3 === 0) {
+            outputArr.push('Fizz Buzz')
         } else if (value % 3 === 0) {
-            outputArr.push('Fizz');
+            outputArr.push('Fizz')
+        } else if (value % 5 === 0) {
+            outputArr.push('Buzz')
         } else {
-            outputArr.push(value);
+            outputArr.push(value)
         }
-    });
+    })
     return outputArr;
 };
 

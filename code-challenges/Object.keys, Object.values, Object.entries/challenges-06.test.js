@@ -16,9 +16,14 @@ const courseInfo = {
 
 const getCourseKeys = (obj) => {
     // Solution code here...
+    let arr = [];
+    Object.keys(obj).forEach((value) => {
+            arr.push(value)
+        })
+        // console.log(arr);
+    return arr
 
 
-    return Object.keys(obj);
 
 };
 
@@ -76,10 +81,12 @@ let characters = [{
 const getHouses = (arr) => {
     let houses = [];
     // Solution code here...
+    arr.forEach(element => {
+        houses.push(element.house)
+    });
+    // console.log(houses);
 
-    Object.entries(arr).forEach(entry => { houses.push(entry[1].house); });
     return houses;
-
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -96,6 +103,25 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
     // Solution code here...
+    let names = [];
+    let children = [];
+    arr.forEach(element => {
+        names.push(Object.values(element)[0])
+        children.push(Object.values(element)[2])
+    });
+    console.log(names);
+    console.log(children);
+
+    for (let i = 0; i < names.length; i++) {
+
+        if (character === names[i] && children[i] != []) {
+            console.log(true);
+            return true
+        } else if (character !== names[i] && children[i] == []) {
+            console.log(false);
+            return false
+        }
+    }
 
 };
 

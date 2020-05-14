@@ -16,10 +16,11 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
     let result = [];
     // Solution code here...
-    for (let i = 0; i < str.length; i++) {
-        result.push(str.slice(i, str.length));
+    for (let i = 0; i <= str.length; i++) {
+        let sharpened = str.slice(i);
+
+        result.push(sharpened)
     }
-    result.push('');
 
     return result;
 };
@@ -34,8 +35,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
     // Solution code here...
-    let letters = arr.split('');
-    return letters;
+    return arr.split('')
 };
 
 
@@ -81,10 +81,37 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
+    let ing = recipe.ingredients;
     let result = [];
-    // Solution code here...
+    let result2 = [];
+    for (let i = 0; i < ing.length; i++) {
+        let arr;
+        if (i === 5) {
+            arr = ing[i].slice(2)
+        } else {
+            arr = ing[i].slice(1)
+        }
 
-    return result;
+        result.push(arr);
+    }
+    for (let j = 0; j < result.length; j++) {
+        if (j === 0) {
+            result2.push(result[j].slice(14))
+        } else if (j === 5) {
+            result2.push(result[j].slice(6))
+        } else if (j === 6 || j === 7 || j === 8) {
+            result2.push(result[j].slice(7))
+        } else if (j === 4 || j === 9 || j === 10) {
+            result2.push(result[j].slice(9))
+
+        } else if (j === 1 || j === 2 || j === 3) {
+            result2.push(result[j].slice(8))
+        }
+
+    }
+
+    console.log(result2)
+    return result2;
 };
 
 /* ------------------------------------------------------------------------------------------------

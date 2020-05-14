@@ -10,7 +10,12 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
     // Solution code here...
-
+    let arr2 = arr.map((val) => {
+        let str = val[0].toUpperCase() + val.substring(1, val.length)
+        return str
+    })
+    console.log(arr2);
+    return arr2
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,13 +92,18 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
     // Solution code here...
-    let array = [];
-    arr.forEach((element) => {
-        if (element.mass > 77) {
-            array.push(element.name);
+    let arr2 = []
+    for (let i = 0; i < arr.length; i++) {
+
+        let liuksMass = arr[0].mass
+
+        if (parseInt(arr[i].mass) > parseInt(liuksMass)) {
+
+            arr2.push(arr[i].name)
         }
-    });
-    return array.join(" - ");
+    }
+    console.log(arr2);
+    return arr2.join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,7 +142,10 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
     // Solution code here...
+    let regex = /^(https:\/\/)/g
 
+    // console.log(regex.test(url));
+    return regex.test(url)
 
 };
 

@@ -12,11 +12,13 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
     // Solution code here...
-    let newArray = [];
-    for (let element of arr) {
-        newArray.push(Math.pow(2, element));
+    let arr2 = [];
+    for (let i = 0; i < arr.length; i++) {
+        arr2.push(Math.pow(2, arr[i]))
     }
-    return newArray;
+    console.log(arr2);
+
+    return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,11 +29,15 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
     // Solution code here...
-    let newArray = [];
-    arr.forEach(element => {
-        newArray.push(Math.pow(2, element));
-    });
-    return newArray;
+    let arr2 = []
+    arr.forEach((value) => {
+
+        arr2.push(Math.pow(2, value))
+
+    })
+    console.log(arr2);
+
+    return arr2
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,10 +48,12 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
     // Solution code here...
-    let mapped = arr.map(number => {
-        return Math.pow(2, number);
-    });
-    return mapped;
+    let arr2 = arr.map((value) => {
+        return Math.pow(2, value);
+    })
+    console.log(arr2);
+
+    return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,6 +68,12 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
     // Solution code here...
+    let arr2 = arr.map((value, i) => {
+        return value.charCodeAt(0);
+    })
+    console.log(arr2);
+
+    return arr2
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -74,6 +88,12 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
     // Solution code here...
+    let arr2 = arr.map((value, i) => {
+        return value.charCodeAt(0);
+    })
+    console.log(arr2);
+
+    return arr2
 };
 
 /* ------------------------------------------------------------------------------------------------

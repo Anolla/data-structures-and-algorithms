@@ -10,9 +10,10 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
     // Solution code here...
-    return arr.filter(number => {
-        return (number % 2 !== 0);
-    });
+    let arr2 = arr.filter((value) => {
+        return (value % 2)
+    })
+    return arr2
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,9 +29,11 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
     // Solution code here...
-    return arr.filter(string => {
-        return (string.includes('a') || string.includes('e') || string.includes('i') || string.includes('o') || string.includes('u'));
-    });
+    let arr2 = arr.join(' ');
+    console.log(arr.join(' '));
+    let regex = /\w+[eouai]\w+/g
+    console.log(arr2.match(regex));
+    return arr2.match(regex)
 };
 
 
@@ -44,9 +47,12 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
     // Solution code here...
-    return arr.filter(value => {
-        return !(forbiddenValues.includes(value));
-    });
+    let arr2 = arr.filter(element => {
+        if ((forbiddenValues.includes(element)) === false) {
+            return element
+        }
+    })
+    return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------

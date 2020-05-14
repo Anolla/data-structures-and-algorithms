@@ -28,9 +28,12 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
     // Solution code here...
-    var matches = /\b[A-Z].*?\b/g
-    let arr = []
-    return str.match(matches) || arr
+    let regex = /(\b[A-Z]\w*)/g
+    if (str.match(regex)) {
+        return str.match(regex);
+    } else {
+        return str = [];
+    }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,6 +44,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
     // Solution code here...
+    let regex = /^(\b[A-J])/g;
+    let arr2 = []
+    arr.forEach((value) => {
+        if (value.match(regex)) {
+            arr2.push(value);
+        }
+
+    })
+    return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,6 +69,11 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
     // Solution code here...
+    let regex = /^(\b(Oct|oct)$)/
+    let regex2 = /^(\b(Oct|oct)ober)/
+
+
+    return regex.test(input) || regex2.test(input)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,6 +88,8 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = str => {
     // Solution code here...
+    let regex = /\b\w*( )/g
+    return str.match(regex)
 };
 
 /* ------------------------------------------------------------------------------------------------

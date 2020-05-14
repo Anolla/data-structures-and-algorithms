@@ -12,16 +12,19 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
     // Solution code here...
-    return input.reduce((acc, value) => {
-        acc = acc + value.reduce((acc2, value2) => {
-            if (target === value2) {
-                return acc2 + 1;
-            } else {
-                return acc2;
+    let arr = input.reduce((acc, val, i) => {
+        val.map(val => {
+            if (target === val) {
+                acc = acc + 1
             }
-        }, 0);
-        return acc;
-    }, 0);
+            console.log(acc);
+        })
+        console.log(acc);
+        return acc
+    }, 0)
+    console.log(arr);
+
+    return arr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,11 +40,21 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 const totalSum = (input) => {
     // Solution code here...
 
-    let numsJoined = input.join().split(',');
-    return numsJoined.reduce((acc, value) => {
-        let sum = parseInt(acc) + parseInt(value)
-        return sum
+    let s = input.reduce((acc, val, i) => {
+
+        val.map(val => {
+
+            acc = acc + val
+
+
+        })
+        console.log(acc);
+
+        return acc
     }, 0)
+    console.log(s);
+
+    return s
 
 };
 
